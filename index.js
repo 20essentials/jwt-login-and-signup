@@ -4,7 +4,6 @@ import { join } from 'node:path';
 import { UserDb } from './localDatabase.js';
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
-
 process.loadEnvFile();
 const SECRET_JWT_KEY = process.env.SECRET_JWT_KEY;
 const __dirname = import.meta.dirname;
