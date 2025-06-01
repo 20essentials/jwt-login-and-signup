@@ -24,7 +24,7 @@ app.use((req, _, next) => {
   const token = req.cookies?.access_token ?? '';
   req.session = null;
   try {
-    const data = jwt.verify(token, SECRET_JWT_KEY); 
+    const data = jwt.verify(token, SECRET_JWT_KEY);
     req.session = data;
   } catch (_) {}
 
@@ -49,9 +49,8 @@ const authOnly = (req, res, next) => {
 };
 
 function redirectToPrivateIfThereIsSession(req, res, next) {
-  if (req.session)
-    return res.redirect('/private')
-  next()
+  if (req.session) return res.redirect('/private');
+  next();
 }
 
 app.get('/private', authOnly, (req, res) => {
@@ -78,8 +77,9 @@ app.post('/login', async (req, res) => {
   return res
     .cookie('access_token', token, {
       // sameSite: 'strict',
+      // secure: process.env?.NODE_ENV === 'production',
       sameSite: 'lax', //CodeSandbox
-      secure: process.env?.NODE_ENV === 'production',
+      secure: false, //CodeSandbox
       maxAge: 60 * 1000 * 60,
       httpOnly: true
     })
