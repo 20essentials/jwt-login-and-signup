@@ -16,11 +16,12 @@ const viewDirectory = join(__dirname, 'views');
 
 app.set('view engine', 'pug');
 app.set('views', viewDirectory);
+
 app.use(express.static(clientDirectory));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
-app.use((req, res, next) => {
+app.use((req, _, next) => {
   const token = req.cookies?.access_token ?? '';
   req.session = null;
   try {
