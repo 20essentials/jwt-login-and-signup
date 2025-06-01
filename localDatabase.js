@@ -1,7 +1,7 @@
 import DbLocal from 'db-local';
 const { Schema } = new DbLocal({ path: './db' });
 import { z } from 'zod';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs'
 
 const SALT_ROUNDS = 10;
 
@@ -30,6 +30,7 @@ export class UserDb {
     });
 
     if (result.success) {
+      const SALT_ROUNDS = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
       const newUser = User.create({
         _id: crypto.randomUUID(),

@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      bcrypt:
+        specifier: 6.0.0
+        version: 6.0.0
+      bcryptjs:
+        specifier: ^3.0.2
+        version: 3.0.2
       cookie-parser:
         specifier: 1.4.7
         version: 1.4.7
@@ -26,10 +32,6 @@ importers:
       zod:
         specifier: 3.25.46
         version: 3.25.46
-    devDependencies:
-      bcrypt:
-        specifier: ^6.0.0
-        version: 6.0.0
 
 packages:
 
@@ -72,6 +74,10 @@ packages:
   bcrypt@6.0.0:
     resolution: {integrity: sha512-cU8v/EGSrnH+HnxV2z0J7/blxH8gq7Xh2JFT6Aroax7UohdmiJJlxApMxtKfuI7z68NvvVcmR78k2LbT6efhRg==}
     engines: {node: '>= 18'}
+
+  bcryptjs@3.0.2:
+    resolution: {integrity: sha512-k38b3XOZKv60C4E2hVsXTolJWfkGRMbILBIe2IBITXciy5bOsTKot5kDrf3ZfufQtQOUN5mXceUEpU1rTl9Uog==}
+    hasBin: true
 
   body-parser@2.2.0:
     resolution: {integrity: sha512-02qvAaxv8tp7fBa/mw1ga98OGm+eCbqzJOKoRt70sLmfEEi+jyBYVTDGfCL/k06/4EMk/z01gCe7HoCH/f2LTg==}
@@ -524,6 +530,8 @@ snapshots:
     dependencies:
       node-addon-api: 8.3.1
       node-gyp-build: 4.8.4
+
+  bcryptjs@3.0.2: {}
 
   body-parser@2.2.0:
     dependencies:
