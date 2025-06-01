@@ -77,11 +77,12 @@ app.post('/login', async (req, res) => {
   return res
     .cookie('access_token', token, {
       // sameSite: 'strict',
+      // httpOnly: true
       // secure: process.env?.NODE_ENV === 'production',
-      sameSite: 'lax', //CodeSandbox
-      secure: false, //CodeSandbox
+      sameSite: 'none', //CodeSandbox
+      secure: true, //CodeSandbox
       maxAge: 60 * 1000 * 60,
-      httpOnly: true
+      httpOnly: true //CodeSandbox
     })
     .json({ success: true, message });
 });
