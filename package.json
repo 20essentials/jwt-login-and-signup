@@ -1,0 +1,24 @@
+{
+  "name": "super-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "@Dominic",
+  "license": "MIT",
+  "description": "Hello!",
+  "dependencies": {
+    "cookie-parser": "1.4.7",
+    "db-local": "3.1.0",
+    "express": "5.1.0",
+    "jsonwebtoken": "9.0.2",
+    "pug": "3.0.3",
+    "zod": "3.25.46"
+  },
+  "devDependencies": {
+    "bcrypt": "^6.0.0"
+  }
+}

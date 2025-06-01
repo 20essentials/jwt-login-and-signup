@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+    <title>Project With JWT</title>
+  </head>
+  <body>
+    <div class="quantum-grid">
+      <span class="depth-overlay"></span>
+      <svg class="texture-filter">
+        <filter id="quantum-texture">
+          <feTurbulence
+            result="noise"
+            numOctaves="2"
+            baseFrequency="0.1"
+            type="turbulence"
+          ></feTurbulence>
+          <feSpecularLighting
+            result="specular"
+            lighting-color="#00ffcc"
+            specularExponent="30"
+            specularConstant="1"
+            surfaceScale="3"
+            in="noise"
+          >
+            <fePointLight z="150" y="100" x="100"></fePointLight>
+          </feSpecularLighting>
+          <feComposite
+            result="lit"
+            operator="over"
+            in2="SourceGraphic"
+            in="specular"
+          ></feComposite>
+          <feBlend mode="screen" in2="lit" in="SourceGraphic"></feBlend>
+        </filter>
+      </svg>
+    </div>
+
+    <section class="container">
+      <i class="laider" style="--clr: #00ff0a"></i>
+      <i class="laider" style="--clr: #ff0057"></i>
+      <i class="laider" style="--clr: #fffd44"></i>
+      <aside class="login">
+        <h2>Login</h2>
+        <div class="inputBx">
+          <input type="text" placeholder="Username" />
+        </div>
+        <div class="inputBx">
+          <input type="password" placeholder="Password">
+        </div>
+        <div class="inputBx">
+          <input type="submit" value="Sign In">
+        </div>
+        <div class="links">
+          <a href="#">Forget Password</a>
+          <a href="#">SignUp</a>
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>

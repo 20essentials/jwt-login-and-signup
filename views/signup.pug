@@ -1,0 +1,22 @@
+extends layout 
+block content 
+  script(type="module", src="/script.js")
+  section.container
+    i.laider(style="--clr: #00ff0a")
+    i.laider(style="--clr: #ff0057")
+    i.laider(style="--clr: #fffd44")
+    aside.login
+      h2= title
+      form(action="/signup", method="post", autocomplete="off")
+        .inputBx
+          input(type="text", placeholder="Username", name="username", required)
+        .inputBx
+          input(type="password", placeholder="Password", name="password", required)
+        .inputBx
+          input(type="submit", value="Sign Up")
+      .links
+        a(href="#") Hello!
+        a(href="/login") SignIn
+  section.container-popover
+    button.popoverCustom= message
+

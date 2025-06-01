@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="shortcut icon", href="/favicon.webp", type="image/x-icon")
+    link(rel="stylesheet", href="/styles.css")
+    title= title
+  body
+    .quantum-grid
+      span.depth-overlay
+      svg.texture-filter
+        filter#quantum-texture
+          feTurbulence(
+            result="noise",
+            numOctaves="2",
+            baseFrequency="0.1",
+            type="turbulence"
+          )
+          feSpecularLighting(
+            result="specular",
+            lighting-color="#00ffcc",
+            specularExponent="30",
+            specularConstant="1",
+            surfaceScale="3",
+            in="noise"
+          )
+            fePointLight(x="100", y="100", z="150")
+          feComposite(
+            result="lit",
+            operator="over",
+            in2="SourceGraphic",
+            in="specular"
+          )
+          feBlend(mode="screen", in2="lit", in="SourceGraphic")
+    block content
+    
