@@ -5,7 +5,7 @@ import { UserDb } from './localDatabase.js';
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
 process.loadEnvFile();
-const SECRET_JWT_KEY = process.env.SECRET_JWT_KEY;
+const SECRET_JWT_KEY = process.env.SECRET_JWT_KEY ?? 'SUPER_SECRET_ULTRA_KEY';
 const __dirname = import.meta.dirname;
 const port = process.env.PORT ?? '4321';
 const app = express();
