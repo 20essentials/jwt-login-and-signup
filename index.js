@@ -78,7 +78,8 @@ app.post('/login', async (req, res) => {
 
   return res
     .cookie('access_token', token, {
-      sameSite: 'strict',
+      // sameSite: 'strict',
+      sameSite: 'lax', //CodeSandbox
       secure: process.env?.NODE_ENV === 'production',
       maxAge: 60 * 1000 * 60,
       httpOnly: true
