@@ -105,10 +105,13 @@ app.post('/signup', async (req, res) => {
 
   return res
     .cookie('access_token', token, {
-      sameSite: 'strict',
-      secure: process.env?.NODE_ENV === 'production',
+      // sameSite: 'strict',
+      // secure: process.env?.NODE_ENV === 'production',
+      // httpOnly: true,
+      sameSite: 'none', //CodeSandbox
+      secure: false,
+      httpOnly: false,
       maxAge: 60 * 1000 * 60,
-      httpOnly: true
     })
     .json({ success: true, message });
 });
